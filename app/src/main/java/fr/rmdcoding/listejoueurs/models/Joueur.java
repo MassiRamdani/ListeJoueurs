@@ -17,11 +17,12 @@ public class Joueur {
     private String player_detail_url;
     private int dynamic_rank;
     private String profile_pic;
+    private boolean owned;
 
     public Joueur() {
     }
 
-    public Joueur(int id, String name, double speed_score, double stamina_score, double dribbling_score, double defending_score, double passing_score, double shooting_score, double score, int rank, int old_rank, String city, String country, String player_detail_url, int dynamic_rank, String profile_pic) {
+    public Joueur(int id, String name, double speed_score, double stamina_score, double dribbling_score, double defending_score, double passing_score, double shooting_score, double score, int rank, int old_rank, String city, String country, String player_detail_url, int dynamic_rank, String profile_pic, boolean owned) {
         this.id = id;
         this.name = name;
         this.speed_score = speed_score;
@@ -38,6 +39,7 @@ public class Joueur {
         this.player_detail_url = player_detail_url;
         this.dynamic_rank = dynamic_rank;
         this.profile_pic = profile_pic;
+        this.owned = owned;
     }
 
     public int getId() {
@@ -168,25 +170,11 @@ public class Joueur {
         this.profile_pic = profile_pic;
     }
 
-    @Override
-    public String toString() {
-        return "Joueur{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", speed_score=" + speed_score +
-                ", stamina_score=" + stamina_score +
-                ", dribbling_score=" + dribbling_score +
-                ", defending_score=" + defending_score +
-                ", passing_score=" + passing_score +
-                ", shooting_score=" + shooting_score +
-                ", score=" + score +
-                ", rank=" + rank +
-                ", old_rank=" + old_rank +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                ", player_detail_url='" + player_detail_url + '\'' +
-                ", dynamic_rank=" + dynamic_rank +
-                ", profile_pic='" + profile_pic + '\'' +
-                '}';
+    public boolean isOwned() {
+        return owned;
+    }
+
+    public void setOwned(boolean owned) {
+        this.owned = owned;
     }
 }
